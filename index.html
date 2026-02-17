@@ -88,11 +88,23 @@
             font-size: 0.9em;
             color: #8b949e;
         }
+        <h1>🌀 Bhara Sutta</h1>
+    <div class="subtitle">The Discourse on the Burden (ภารสุตฺตคาถา)</div>
+    
+    <button onclick="resetHome()" class="home-btn">🏠 Home (Restart / เริ่มใหม่)</button>
+    
+    <div id="app"></div>
     </style>
 </head>
 <body>
 
     <h1>🌀 Bhara Sutta</h1>
+    <h1>🌀 Bhara Sutta</h1>
+    <div class="subtitle">The Discourse on the Burden (ภารสุตฺตคาถา)</div>
+    
+    <button onclick="resetHome()" class="home-btn">🏠 Home (Restart / เริ่มใหม่)</button>
+    
+    <div id="app"></div>
     <div class="subtitle">The Discourse on the Burden</div>
     
     <div id="app"></div>
@@ -160,6 +172,13 @@
 
         runCycle();
         setInterval(runCycle, 10000);
+        function resetHome() {
+            weights = [0, 0, 0, 0, 0];
+            loopCount = 0;
+            runCycle();
+            alert("Mindfulness Restored: All burdens have been laid down. \n(คืนสติ: วางภาระทั้งหมดลงแล้ว)");
+        }
     </script>
 </body>
+
 </html>
