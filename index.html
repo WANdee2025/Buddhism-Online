@@ -176,9 +176,16 @@
 
         runCycle();
         setInterval(runCycle, 10000);
+            function resetHome() {
+            weights = [0, 0, 0, 0, 0];
+            loopCount = 0;
+            runCycle();
+            alert("Mindfulness Restored: All burdens have been laid down. \n(คืนสติ: วางภาระทั้งหมดลงแล้ว)");
+        }
     </script>
 </body>
 </html>
+
 
 
 
