@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Logic of Peace - Paticcasamuppada Version</title>
+    <title>The Buddhist Causality</title>
     <style>
         body {
             background-color: #000;
@@ -30,21 +30,21 @@
     </style>
 </head>
 <body>
-    <div id="display">Awaiting Consciousness...</div>
+    <div id="display">Observing the Causality...</div>
 
     <script>
-        // ปรับลำดับตามหลักปฏิจจสมุปบาท: วิญญาณมาก่อน
         const aggregates = ["Consciousness", "Body", "Feeling", "Perception", "Mental Formations"];
         const display = document.getElementById('display');
         const body = document.body;
 
         async function startProcess() {
             while (true) {
+                // 1. Reset to Dark Mode
                 body.classList.remove('peace-mode');
                 display.innerHTML = "";
                 let totalWeight = 0;
 
-                // Loop 1-5: The Accumulation (2.4s interval)
+                // 2. The Accumulation (2.4s interval)
                 for (let i = 0; i < aggregates.length; i++) {
                     await new Promise(r => setTimeout(r, 2400));
                     
@@ -54,21 +54,25 @@
                     display.innerHTML += `<div>[ Carrying ] ${aggregates[i].padEnd(17)} : +${weight}</div>`;
                 }
 
-                // Show Total
+                // 3. Show Total Weight
                 await new Promise(r => setTimeout(r, 2000));
                 display.innerHTML += `<div style="margin-top:20px; border-top: 1px solid #444;">TOTAL BURDEN: ${totalWeight}</div>`;
                 
-                // Pause for final realization
+                // 4. Pause for final realization
                 await new Promise(r => setTimeout(r, 3000)); 
                 
-                // Step 6: The Celebration of Peace (18s interval)
+                // 5. The Release - 3 Balanced Lines
                 body.classList.add('peace-mode');
-                display.innerHTML = `<div style="text-align:center; font-style:italic;">
-                    "Releasing the burden from heart is the peace in the Life World."
-                    <br><br>
-                    <span style="font-size: 0.8rem;">( Pure Zero State )</span>
-                </div>`;
+                display.innerHTML = `
+                    <div style="text-align:center;">
+                        <div style="font-weight:bold; font-size: 1.8rem; margin-bottom: 15px;">The Buddhist Causality</div>
+                        <div style="font-style:italic; font-size: 1.4rem; margin-bottom: 15px;">
+                            "Releasing the burden from heart is the peace in the Life World."
+                        </div>
+                        <div style="font-size: 0.9rem; letter-spacing: 3px;">( PURE ZERO STATE )</div>
+                    </div>`;
 
+                // 6. Celebration Interval (18s)
                 await new Promise(r => setTimeout(r, 18000)); 
             }
         }
