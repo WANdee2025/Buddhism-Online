@@ -10,4 +10,4 @@ A digital tool to help users understand "The Burden" (The Five Aggregates). This
 An interactive application focused on the core principle of self-reliance. It serves as a digital reminder that inner strength is developed through one's own efforts.
 
 ---
-*(เอไอ รวบรวมและเรียบเรียง)*
+**(Curated by J.E.Sapparojpattana | AI collected and organized from Thailand)
