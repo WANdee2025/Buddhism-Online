@@ -9,5 +9,8 @@ A digital tool to help users understand "The Burden" (The Five Aggregates). This
 ## 2. Atta Hi Attano Natho: Be Your Own Refuge
 An interactive application focused on the core principle of self-reliance. It serves as a digital reminder that inner strength is developed through one's own efforts.
 
+## 3. The Shortest Path (Chula Tanha)
+An interactive contemplation on the Chula Tanha Khaya Sutta, visualizing the cycle of "Holding" and "Letting Go."
+
 ---
 (Curated by J.E.Sapparojpattana | AI collected and organized from Thailand)
