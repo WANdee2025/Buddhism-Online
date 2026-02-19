@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cycle of Letting Go - Chula Tanha</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 650px;
+            padding: 20px;
+        }
+        .pali-text {
+            font-style: italic;
+            color: #d4af37;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        #message {
+            font-size: 1.4rem;
+            min-height: 120px;
+            transition: opacity 1s ease-in-out;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        button {
+            background-color: transparent;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="pali-text">"Sabbe Dhamma Nalam Abhinivesaya"</div>
+    
+    <div id="message">
+        </div>
+
+    <button id="toggleBtn" onclick="toggleLoop()">Pause Contemplation</button>
+</div>
+
+<script>
+    const msg = document.getElementById('message');
+    const btn = document.getElementById('toggleBtn');
+    
+    const states = [
+        {
+            text: "Everything is heavy when we hold it.<br><span style='font-size: 1.1rem; opacity: 0.7;'>(ธรรมทั้งปวงไม่ควรยึดมั่นถือมั่น)</span>",
+            color: "#e0e0e0"
+        },
+        {
+            text: "<strong style='color: #d4af37;'>The Path is Shortest When We Let Go.</strong><br>ทางลัดที่สุด คือการไม่ถือมั่นสิ่งใด",
+            color: "#d4af37"
+        }
+    ];
+
+    let currentIndex = 0;
+    let isRunning = true;
+    let loopTimeout;
+
+    function updateContent() {
+        if (!isRunning) return;
+
+        msg.style.opacity = '0';
+        
+        setTimeout(() => {
+            msg.innerHTML = states[currentIndex].text;
+            msg.style.color = states[currentIndex].color;
+            msg.style.opacity = '1';
+            
+            currentIndex = (currentIndex + 1) % states.length;
+            
+            // วนลูปทุกๆ 4 วินาที (ให้เวลาอ่านนานขึ้นนิดนึงครับ)
+            loopTimeout = setTimeout(updateContent, 4000);
+        }, 1000);
+    }
+
+    function toggleLoop() {
+        if (isRunning) {
+            // หยุดการวนลูป
+            isRunning = false;
+            clearTimeout(loopTimeout);
+            btn.innerHTML = "Continue Cycle";
+            btn.style.borderColor = "#e0e0e0";
+            btn.style.color = "#e0e0e0";
+        } else {
+            // เริ่มการวนลูปใหม่
+            isRunning = true;
+            btn.innerHTML = "Pause Contemplation";
+            btn.style.borderColor = "#d4af37";
+            btn.style.color = "#d4af37";
+            updateContent();
+        }
+    }
+
+    // เริ่มทำงานครั้งแรก
+    updateContent();
+</script>
+
+</body>
+</html>
